@@ -1,5 +1,5 @@
 // Include React 
-var React = require('react');
+import React from 'react';
 
 // Component creation
 var Results = React.createClass({
@@ -46,4 +46,4 @@ var Results = React.createClass({
 });
 
 // Export the component back for use in other files
-module.exports = Results;
+export default Results;

@@ -1,9 +1,9 @@
-var express = require("express");
-var bodyParser = require('body-parser');
-var logger = require('morgan');
-var mongoose = require('mongoose');
+import express from "express";
+import bodyParser from 'body-parser';
+import logger from 'morgan';
+import mongoose from 'mongoose';
  
-var Article = require('./models/Article.js');
+import Article from './models/Article.js';
 
 var PORT = Process.enc.PORT || 3000;
 
@@ -17,7 +17,7 @@ app.use(express.static('./public'));
 //mongoose local host connection
 mongoose.connect('mongodb://localhost/nytreact');
 //Mongoose heroku connection
-mongoose.connect()
+mongoose.connect('mongodb://heroku_x5s0skk3:9b3nsgi5qjtunmt6pfe0d0ahlg@ds241875.mlab.com:41875/heroku_x5s0skk3');
 
 var db = mongoose.connection;
 db.on('error',function(err){

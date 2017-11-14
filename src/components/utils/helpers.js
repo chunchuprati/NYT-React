@@ -1,14 +1,14 @@
 // Include the axios package for performing HTTP requests (promise based alternative to request)
-var axios = require('axios');
+import axios from 'axios';
 
 // New York Times API
-var nytAPI = "f1a7fcef37c5472fb77d910720e8abb9";
+let nytAPI = "f1a7fcef37c5472fb77d910720e8abb9";
 
 // Helper functions
-var helpers = {
+let helpers = {
     runQuery:function(topic,startYear,endYear){
 	//Figure out the geolocation
-		var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + nytAPI + "&q=" + topic + "&begin_date=" + startYear + "0101&end_date=" + endYear + "0101";
+		let queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + nytAPI + "&q=" + topic + "&begin_date=" + startYear + "0101&end_date=" + endYear + "0101";
         return axios.get(queryUR)
         .then(function(response){
             
@@ -17,7 +17,7 @@ var helpers = {
             var counter = 0;
 
             // Get first 5 Articles that have 3 components
-            for (var i =0; i<fullResults.length; i++){
+            for (let i =0; i<fullResults.length; i++){
                 if(counter>4){
                     return newResults;
                 }
@@ -43,4 +43,4 @@ var helpers = {
 
 
 // We export the helpers function (which contains getGithubInfo)
-module.exports = helpers;
+export default helpers;
